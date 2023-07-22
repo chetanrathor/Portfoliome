@@ -56,8 +56,6 @@ const Contact = () => (
               </Grid>
             )
           })}
-          {/* <Grid item lg={3}></Grid>
-        <Grid item lg={3}></Grid> */}
         </Grid>
 
         <Grid container>

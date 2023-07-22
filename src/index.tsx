@@ -13,32 +13,38 @@ import Portfolio from './pages/Portfolio';
 export const routes = createBrowserRouter([
   {
     path: "/",
-    element: (<Home></Home>)
+    element: (<App></App>),
+    children:[
+      {
+        path:'',
+        element:(<Home></Home>)
+      },
+      {
+        path:'about',
+        element:(<About></About>)
+      },
+      {
+        path:'contact',
+        element:(<Contact></Contact>)
+      },
+      {
+        path:'portfolio',
+        element:(<Portfolio></Portfolio>)
+      }
+    ]
+
   },
-  {
-    path: "/about",
-    element: (<About></About>)
-  },
-  {
-    path: "/portfolio",
-    element: (<Portfolio></Portfolio>)
-  },
-  {
-    path: "/contact",
-    element: (<Contact></Contact>)
-  },
+
 ])
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      {/* <RouterProvider fallbackElement={   <App />} router={routes}> */}
 
-      <App></App>
-      {/* </RouterProvider> */}
-    </ThemeProvider>
+    <RouterProvider router={routes} />
+
+
   </React.StrictMode>
 );
 
