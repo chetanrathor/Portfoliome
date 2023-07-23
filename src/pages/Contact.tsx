@@ -1,19 +1,16 @@
-import React from 'react'
-import { TextareaAutosize } from '@mui/base';
-import Header from '../components/Header'
-import PageHeading from '../components/PageHeading'
-import Container from '../components/Container'
-import Wrapper from '../components/Wrapper'
-import { Box, Grid, Typography } from '@mui/material'
-import SectionHeading from '../components/SectionHeading'
-import Seprator from '../components/Seprator'
-import Input from '../components/Input'
-import ButtonComponent from '../components/ButtonComponent';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Box, Grid, Typography } from '@mui/material';
+import ButtonComponent from '../components/ButtonComponent';
+import Container from '../components/Container';
 import Footer from '../components/Footer';
+import Header from '../components/Header';
+import Input from '../components/Input';
+import PageHeading from '../components/PageHeading';
+import SectionHeading from '../components/SectionHeading';
+import Wrapper from '../components/Wrapper';
 import { textAlign } from '../theme';
 const contactUsInfo = [
   {

@@ -134,7 +134,7 @@ const Home = () => {
             <Grid gap={3} container direction={'column'} alignItems={'center'} lg={3} sx={{ backgroundColor: theme.palette.warning.main, padding: '48px', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', borderRadius: 2 }}>
               <Grid item>
 
-                <img src={process.env.PUBLIC_URL + 'images/c.png'} width={'68px'} height={'68px'}></img>
+                <img alt='' src={process.env.PUBLIC_URL + 'images/c.png'} width={'68px'} height={'68px'}></img>
               </Grid>
               <Typography variant='h5' color={theme.palette.secondary.main}>UI/UX Design</Typography>
               <Typography maxWidth={'236px'} textAlign={'center'} variant='subtitle1' color={theme.palette.success.main}>Lorem ipsum dolor sit amet,
@@ -144,13 +144,13 @@ const Home = () => {
                 dapibus leo.</Typography>
               <Grid item>
 
-                <img src={process.env.PUBLIC_URL + 'images/Link.png'} width={'36px'} height={'36px'}></img>
+                <img alt='' src={process.env.PUBLIC_URL + 'images/Link.png'} width={'36px'} height={'36px'}></img>
               </Grid>
             </Grid>
             <Grid gap={3} container direction={'column'} alignItems={'center'} lg={3} sx={{ backgroundColor: theme.palette.warning.main, padding: '48px', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', borderRadius: 2 }}>
               <Grid item>
 
-                <img src={process.env.PUBLIC_URL + 'images/c.png'} width={'68px'} height={'68px'}></img>
+                <img alt='' src={process.env.PUBLIC_URL + 'images/c.png'} width={'68px'} height={'68px'}></img>
               </Grid>
               <Typography variant='h5' color={theme.palette.secondary.main}>UI/UX Design</Typography>
               <Typography maxWidth={'236px'} textAlign={'center'} variant='subtitle1' color={theme.palette.success.main}>Lorem ipsum dolor sit amet,
@@ -160,13 +160,13 @@ const Home = () => {
                 dapibus leo.</Typography>
               <Grid item>
 
-                <img src={process.env.PUBLIC_URL + 'images/Link.png'} width={'36px'} height={'36px'}></img>
+                <img alt='' src={process.env.PUBLIC_URL + 'images/Link.png'} width={'36px'} height={'36px'}></img>
               </Grid>
             </Grid>
             <Grid gap={3} container direction={'column'} alignItems={'center'} lg={3} sx={{ backgroundColor: theme.palette.warning.main, padding: '48px', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', borderRadius: 2 }}>
               <Grid item>
 
-                <img src={process.env.PUBLIC_URL + 'images/c.png'} width={'68px'} height={'68px'}></img>
+                <img alt='' src={process.env.PUBLIC_URL + 'images/c.png'} width={'68px'} height={'68px'}></img>
               </Grid>
               <Typography variant='h5' color={theme.palette.secondary.main}>UI/UX Design</Typography>
               <Typography maxWidth={'236px'} textAlign={'center'} variant='subtitle1' color={theme.palette.success.main}>Lorem ipsum dolor sit amet,
@@ -176,7 +176,7 @@ const Home = () => {
                 dapibus leo.</Typography>
               <Grid item>
 
-                <img src={process.env.PUBLIC_URL + 'images/Link.png'} width={'36px'} height={'36px'}></img>
+                <img alt='' src={process.env.PUBLIC_URL + 'images/Link.png'} width={'36px'} height={'36px'}></img>
               </Grid>
             </Grid>
 

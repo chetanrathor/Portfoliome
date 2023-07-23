@@ -1,9 +1,8 @@
-import { Box, Fade, Grid, Slide, Typography, useMediaQuery } from '@mui/material'
-import React from 'react'
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Box, Grid, Slide, Typography } from '@mui/material';
 import { theme } from '../theme';
 import ButtonComponent from './ButtonComponent';
 const Hero = () => {

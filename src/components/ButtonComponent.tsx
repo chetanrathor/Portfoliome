@@ -1,7 +1,5 @@
 import { Button, } from '@mui/material';
-import { makeStyles } from '@mui/styles';
-import React, { ReactNode } from 'react'
-import { theme } from '../theme';
+import { ReactNode } from 'react';
 
 
 interface Prop {

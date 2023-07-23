@@ -1,7 +1,5 @@
-import React from 'react'
-import PageHeading from '../components/PageHeading'
-import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Header from '../components/Header'
 
 const Portfolio = () => {
   return (

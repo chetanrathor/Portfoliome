@@ -1,7 +1,5 @@
-import { Box } from '@mui/material'
-import React from 'react'
-import { theme } from '../theme'
 import { Line } from 'rc-progress'
+import { theme } from '../theme'
 
 interface Prop{
   percent:number
