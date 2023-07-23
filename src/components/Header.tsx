@@ -1,10 +1,10 @@
-import { Box, Button, Grid, Slide, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
+import { Box, Grid, Slide, Typography } from '@mui/material'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { theme } from '../theme'
 import ButtonComponent from './ButtonComponent'
-import { Link } from 'react-router-dom'
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 const Header = () => {
   const [toggle, setToggle] = useState(false)
 
@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <div>
-      <Box sx={{ backgroundColor: '#FEFAFA', marginBottom: 2 }}  top={0} left={0} right={0} zIndex={1} height={'100px'}>
+      <Box sx={{ backgroundColor: '#FEFAFA', marginBottom: 2}} top={0} left={0} right={0} zIndex={1} position={'fixed'}  >
         <Grid container sx={{ flexDirection: { xs: 'column', md: 'row' } }} justifyContent={'space-between'} maxWidth={'lg'} margin={'auto'}>
           <Grid item container={true} alignItems={'center'} justifyContent={'space-between'} paddingX={2} md={2}>
             <img src={'images/logo.png'} alt="" height={70} width={70} />
@@ -28,7 +28,7 @@ const Header = () => {
             </Box>
           </Grid>
           <Slide in={toggle} timeout={1500} direction='down'>
-            <Grid item sx={{ height: (toggle ? '250px' : '0'), flexDirection: { xs: 'column', md: 'row' } }} container gap={4} alignItems={'center'} md={4}>
+            <Grid item sx={{ display: (toggle ? 'flex' : 'none'), flexDirection: { xs: 'column', md: 'row' } }} container gap={4} alignItems={'center'} md={4}>
 
               <Link to={'/'}>
                 <Typography variant='subtitle1' color={theme.palette.secondary.main}>

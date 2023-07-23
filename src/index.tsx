@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { ThemeProvider } from '@mui/material';
-import { theme } from './theme';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import App from './App';
+import './index.css';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
+import reportWebVitals from './reportWebVitals';
 export const routes = createBrowserRouter([
   {
     path: "/",
