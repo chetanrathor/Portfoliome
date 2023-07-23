@@ -1,6 +1,6 @@
 import { Grid, Typography } from '@mui/material'
 import React from 'react'
-import { theme } from '../theme'
+import { textAlign, theme } from '../theme'
 
 interface Prop {
     heading:string,
@@ -21,7 +21,7 @@ const SectionHeading = ({heading,subtitle,alignItems}:Prop) => {
   return (
     <div>
       <Grid container alignItems={getAlignItems().alignItem} gap={2} direction={'column'}>
-          <Grid item>
+          <Grid item sx={{textAlign:textAlign}}>
             <Typography variant='h3' color={theme.palette.secondary.main}>{heading}</Typography>
           </Grid>
           <Grid item>

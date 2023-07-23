@@ -13,7 +13,7 @@ const Footer = () => {
             <Container paddingY={5} shouldVisibleBackgroundImage={false} backgroundColor={theme.palette.secondary.main}>
                 <Wrapper>
                     <Grid container justifyContent={'center'} alignItems={'center'}>
-                        <Grid item container gap={4} lg={4} >
+                        <Grid item container gap={4} lg={4} sx={{justifyContent:'center'}} >
                             <LinkedInIcon sx={{color:'#fff'}}></LinkedInIcon>
                             <InstagramIcon sx={{color:'#fff'}}></InstagramIcon>
                             <GitHubIcon sx={{color:'#fff'}}></GitHubIcon>

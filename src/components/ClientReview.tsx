@@ -15,7 +15,7 @@ interface Prop {
 const ClientReview = ({ clientImage, name, review, isPublicImage,maxWidth }: Prop) => {
     return (
         <div>
-            <Grid gap={3} container direction={'column'} alignItems={'center'} sx={{ backgroundColor: theme.palette.warning.main, padding: '48px' }}>
+            <Grid gap={3} container direction={'column'} alignItems={'center'} sx={{ backgroundColor: theme.palette.warning.main, padding: '48px',borderRadius:'10px',boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}>
                 <Grid item>
 
                     <img src={`${process.env.PUBLIC_URL}/images/quotation.png`} width={'19px'} height={'19px'}></img>

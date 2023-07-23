@@ -24,7 +24,7 @@ function App() {
       {/* <About></About> */}
       {/* <Contact></Contact> */}
       <>
-        fds
+      
       </>
     </>
   );

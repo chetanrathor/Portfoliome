@@ -14,6 +14,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import Footer from '../components/Footer';
+import { textAlign } from '../theme';
 const contactUsInfo = [
   {
     icon: 'phone.png',
@@ -39,12 +40,11 @@ const Contact = () => (
     <PageHeading heading='Contact'></PageHeading>
     <Container shouldVisibleBackgroundImage paddingY={20}>
       <Wrapper>
-        <Grid container justifyContent={'space-between'} >
-          {contactUsInfo.map((item) => {
-
+        <Grid paddingX={4} gap={3} container justifyContent={'space-between'}  sx={{flexDirection:{xs:'column',md:'row'}}}>
+          {contactUsInfo.map((item,index) => {
             return (
-              <Grid item width={'329.98px'}>
-                <Grid container direction={'column'} paddingY={4} paddingX={2} alignItems={'center'} boxShadow={'0px 0px 45px 0px #F0EBEB'}>
+              <Grid item width={'329.98px'} key={1}>
+                <Grid container direction={'column'} paddingY={4} paddingX={2} alignItems={'center'} sx={{borderRadius:'10px'}} boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'}>
                   <img height={'35px'} width={'22px'} src={`${process.env.PUBLIC_URL}/images/${item.icon}`}></img>
                   <Typography variant='h6' color={'#002D5B'}>
                     {item.heading}
@@ -58,20 +58,20 @@ const Contact = () => (
           })}
         </Grid>
 
-        <Grid container>
+        <Grid container sx={{flexDirection:{xs:'column',md:'row'}}}>
           <Grid item lg={8}>
             <Grid container direction={'column'} padding={5} gap={4}>
-              <SectionHeading alignItems='start' heading='Get In Touch' subtitle=''></SectionHeading>
+              <SectionHeading  heading='Get In Touch' subtitle=''></SectionHeading>
               <Input></Input>
               <Input></Input>
               <Box>
 
-                <TextareaAutosize style={{ background: '#FAFAFA', borderRadius: '2px' }} minRows={12} cols={90} ></TextareaAutosize>
-                <Typography variant='body1' color={'#35373A'}>
+                {/* <TextareaAutosize style={{ background: '#FAFAFA', borderRadius: '2px' }} minRows={12} cols={90} ></TextareaAutosize> */}
+                <Typography sx={{textAlign:textAlign}} variant='body1' color={'#35373A'}>
                   0 of 1 max characters.
                 </Typography>
               </Box>
-              <Box>
+              <Box sx={{margin:{xs:'auto',md:'0'}}}>
                 <ButtonComponent>
                   <Typography variant='subtitle1' color={'#fff'}>Send Message</Typography>
                 </ButtonComponent>
@@ -79,11 +79,11 @@ const Contact = () => (
 
             </Grid>
           </Grid>
-          <Grid item lg={4} paddingX={10} paddingY={5}>
-            <SectionHeading heading='Message Me' subtitle='' alignItems='start'></SectionHeading>
+          <Grid item lg={4} paddingX={{xs:0,md:10}} paddingY={5}>
+            <SectionHeading heading='Message Me' subtitle='' ></SectionHeading>
             <Box marginY={2}>
 
-              <Typography variant='subtitle1' color={'#35373A'}>
+              <Typography variant='subtitle1' color={'#35373A'} sx={{textAlign}}>
                 Lorem ipsum dolor
                 sit amet,
                 consectetur
@@ -93,7 +93,7 @@ const Contact = () => (
                 pulvinar dapibus
                 leo.
               </Typography>
-              <Grid container marginY={10} justifyContent={'space-between'}>
+              <Grid container marginY={10} gap={5} justifyContent={'center'}>
                 <LinkedInIcon sx={{ color: '#002D5B' }}></LinkedInIcon>
                 <InstagramIcon sx={{ color: '#002D5B' }}></InstagramIcon>
                 <GitHubIcon sx={{ color: '#002D5B' }}></GitHubIcon>
