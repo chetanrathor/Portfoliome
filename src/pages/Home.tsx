@@ -14,6 +14,42 @@ import { theme } from '../theme'
 
 const Home = () => {
 
+  const serviceProvides = [
+    {
+      meta: {
+        imagePath: 'code.png',
+        height: '68px',
+        width: '68px'
+      },
+      data: {
+        heading: 'UI/UX Design',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
+      }
+    },
+    {
+      meta: {
+        imagePath: 'gear.png',
+        height: '76px',
+        width: '78px'
+      },
+      data: {
+        heading: 'UI/UX Design',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
+      }
+    },
+    {
+      meta: {
+        imagePath: 'crm.png',
+        height: '68px',
+        width: '68px'
+      },
+      data: {
+        heading: 'UI/UX Design',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
+      }
+    }
+  ]
+
   const [scrollYState, setScrollY] = useState({
     inOne: false
   })
@@ -117,8 +153,8 @@ const Home = () => {
                   </Typography>
                 </Grid>
                 <Grid lg={4} sx={{ display: { xs: 'none', md: 'block' } }} >
-                  <Box sx={{ backgroundColor: theme.palette.primary.main, borderRadius: '10px', width: '330px', height: '440px' }}>
-                    <img height={'420px'} width={'330px'} style={{ position: 'relative', top: '10px', right: '10px' }} src="images/cart.png" alt="" />
+                  <Box sx={{ borderRadius: '10px', width: '330px', height: '440px' }}>
+                    <img height={'420px'} width={'420px'} style={{ position: 'relative', top: '10px', right: '10px' }} src="images/meta_comp.png" alt="" />
                   </Box>
                 </Grid>
               </Grid>
@@ -131,10 +167,38 @@ const Home = () => {
           <SectionHeading heading={`What Services I'm Providing`} subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'></SectionHeading>
 
           <Grid container gap={6} justifyContent={'center'} padding={2}>
-            <Grid gap={3} container direction={'column'} alignItems={'center'} lg={3} sx={{ backgroundColor: theme.palette.warning.main, padding: '48px', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', borderRadius: 2 }}>
+
+            {
+
+              serviceProvides.map((item) => {
+                return (<>
+
+                  <Grid gap={3} container direction={'column'} alignItems={'center'} lg={3} sx={{ backgroundColor: theme.palette.warning.main, padding: '48px', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', borderRadius: 2 }}>
+                    <Grid item>
+
+                      <img alt='' src={`${process.env.PUBLIC_URL}/images/${item.meta.imagePath}`} width={item.meta.width} height={item.meta.height}></img>
+                    </Grid>
+                    <Typography variant='h5' color={theme.palette.secondary.main}>{item.data.heading}</Typography>
+                    <Typography maxWidth={'236px'} textAlign={'center'} variant='subtitle1' color={theme.palette.success.main}>Lorem ipsum dolor sit amet,
+                      {item.data.subtitle}
+                    </Typography>
+                    <Grid item sx={{cursor:'pointer'}}>
+
+                      <img alt='' src={process.env.PUBLIC_URL + 'images/arrow1.png'} width={'46px'} height={'46px'}></img>
+                    </Grid>
+                  </Grid>
+                </>)
+              })
+            }
+
+
+
+
+
+            {/* <Grid gap={3} container direction={'column'} alignItems={'center'} lg={3} sx={{ backgroundColor: theme.palette.warning.main, padding: '48px', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', borderRadius: 2 }}>
               <Grid item>
 
-                <img alt='' src={process.env.PUBLIC_URL + 'images/c.png'} width={'68px'} height={'68px'}></img>
+                <img alt='' src={process.env.PUBLIC_URL + 'images/gear.png'} width={'78px'} height={'76px'}></img>
               </Grid>
               <Typography variant='h5' color={theme.palette.secondary.main}>UI/UX Design</Typography>
               <Typography maxWidth={'236px'} textAlign={'center'} variant='subtitle1' color={theme.palette.success.main}>Lorem ipsum dolor sit amet,
@@ -144,13 +208,13 @@ const Home = () => {
                 dapibus leo.</Typography>
               <Grid item>
 
-                <img alt='' src={process.env.PUBLIC_URL + 'images/Link.png'} width={'36px'} height={'36px'}></img>
+                <img alt='' src={process.env.PUBLIC_URL + 'images/arrow1.png'} width={'46px'} height={'46px'}></img>
               </Grid>
             </Grid>
             <Grid gap={3} container direction={'column'} alignItems={'center'} lg={3} sx={{ backgroundColor: theme.palette.warning.main, padding: '48px', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', borderRadius: 2 }}>
               <Grid item>
 
-                <img alt='' src={process.env.PUBLIC_URL + 'images/c.png'} width={'68px'} height={'68px'}></img>
+                <img alt='' src={process.env.PUBLIC_URL + 'images/crm.png'} width={'68px'} height={'68px'}></img>
               </Grid>
               <Typography variant='h5' color={theme.palette.secondary.main}>UI/UX Design</Typography>
               <Typography maxWidth={'236px'} textAlign={'center'} variant='subtitle1' color={theme.palette.success.main}>Lorem ipsum dolor sit amet,
@@ -158,27 +222,11 @@ const Home = () => {
                 elit tellus, luctus nec
                 ullamcorper mattis, pulvinar
                 dapibus leo.</Typography>
-              <Grid item>
+              <Grid item sx={{ cursor: 'pointer' }} >
 
-                <img alt='' src={process.env.PUBLIC_URL + 'images/Link.png'} width={'36px'} height={'36px'}></img>
+                <img alt='' src={process.env.PUBLIC_URL + 'images/arrow1.png'} width={'46px'} height={'46px'}></img>
               </Grid>
-            </Grid>
-            <Grid gap={3} container direction={'column'} alignItems={'center'} lg={3} sx={{ backgroundColor: theme.palette.warning.main, padding: '48px', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', borderRadius: 2 }}>
-              <Grid item>
-
-                <img alt='' src={process.env.PUBLIC_URL + 'images/c.png'} width={'68px'} height={'68px'}></img>
-              </Grid>
-              <Typography variant='h5' color={theme.palette.secondary.main}>UI/UX Design</Typography>
-              <Typography maxWidth={'236px'} textAlign={'center'} variant='subtitle1' color={theme.palette.success.main}>Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Ut
-                elit tellus, luctus nec
-                ullamcorper mattis, pulvinar
-                dapibus leo.</Typography>
-              <Grid item>
-
-                <img alt='' src={process.env.PUBLIC_URL + 'images/Link.png'} width={'36px'} height={'36px'}></img>
-              </Grid>
-            </Grid>
+            </Grid> */}
 
 
           </Grid>
@@ -196,29 +244,29 @@ const Home = () => {
               </Grid>
 
               <Grid container justifyContent={'center'} gap={4} padding={2}>
-                <Grid item xl={5}>
+                <Grid item maxWidth={'520px'}>
                   <SkillCart title='UI/UX Designer' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
             elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
             leo.' duration='2015-2018' linePercent={80}></SkillCart>
                 </Grid>
-                <Grid item xl={5}>
+                <Grid item maxWidth={'520px'}>
                   <SkillCart title='UI/UX Designer' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
             elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
             leo.' duration='2015-2018' linePercent={80}></SkillCart>
                 </Grid>
               </Grid>
               <Grid container justifyContent={'center'} gap={6} padding={2}>
-                <Grid item xl={3}>
+                <Grid item maxWidth={'329px'}>
                   <SkillCart title='UI/UX Designer' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
             elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
             leo.' duration='2015-2018' linePercent={80}></SkillCart>
                 </Grid>
-                <Grid item xl={3}>
+                <Grid item maxWidth={'329px'}>
                   <SkillCart title='UI/UX Designer' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
             elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
             leo.' duration='2015-2018' linePercent={80}></SkillCart>
                 </Grid>
-                <Grid item xl={3}>
+                <Grid item maxWidth={'329px'}>
                   <SkillCart title='UI/UX Designer' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
             elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
             leo.' duration='2015-2018' linePercent={80}></SkillCart>
@@ -232,22 +280,22 @@ const Home = () => {
           <Wrapper>
             <Grid container direction={'column'} marginY={2}>
               <SectionHeading heading='What My Clients Says' subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'></SectionHeading>
-              <Grid container gap={5} justifyContent={'center'} padding={2}>
-                <Grid item xl={3}>
+              <Grid container gap={5} justifyContent={'space-between'} padding={2}>
+                <Grid item >
                   <ClientReview maxWidth='232px' clientImage='male.png' isPublicImage name='Jane Done' review='Lorem ipsum dolor sit amet,
 consectetur adipiscing elit. Ut
 elit tellus, luctus nec
 ullamcorper mattis, pulvinar
 dapibus leo.'></ClientReview>
                 </Grid>
-                <Grid item xl={3}>
+                <Grid item >
                   <ClientReview maxWidth='232px' clientImage='male.png' isPublicImage name='Jane Done' review='Lorem ipsum dolor sit amet,
 consectetur adipiscing elit. Ut
 elit tellus, luctus nec
 ullamcorper mattis, pulvinar
 dapibus leo.'></ClientReview>
                 </Grid>
-                <Grid item xl={3}>
+                <Grid item >
                   <ClientReview maxWidth='232px' clientImage='male.png' isPublicImage name='Jane Done' review='Lorem ipsum dolor sit amet,
 consectetur adipiscing elit. Ut
 elit tellus, luctus nec

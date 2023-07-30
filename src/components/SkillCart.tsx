@@ -14,7 +14,7 @@ interface Prop{
 const SkillCart = ({description,duration,linePercent,title}:Prop) => {
     return (
         <div>
-            <Grid gap={2} padding={2} container direction={'column'} sx={{ backgroundColor: theme.palette.warning.main,borderRadius:'10px' ,boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
+            <Grid gap={2} padding={4} container direction={'column'} sx={{ backgroundColor: theme.palette.warning.main,borderRadius:'10px' ,boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
                 <Typography variant='h6' color={'#000'}>
                    {title}
                 </Typography>
