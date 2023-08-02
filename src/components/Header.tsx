@@ -11,7 +11,7 @@ import { toggleVisiblity } from '../store/navbarSlice'
 const Header = () => {
   const navbarState = useSelector((state: Rootstate) => state.navbar.isVisible)
   const dispatch = useDispatch()
-  const handelToggle = (value:boolean) => {
+  const handelToggle = (value: boolean) => {
     dispatch(toggleVisiblity({ isVisible: value }))
   }
 
@@ -34,63 +34,63 @@ const Header = () => {
     }
   ]
 
-  const handelLinkClick = ()=>{
-    window.scroll({top:0,behavior:'smooth'}) 
-   handelToggle(false)
+  const handelLinkClick = () => {
+    window.scroll({ top: 0, behavior: 'smooth' })
+    handelToggle(false)
   }
 
   return (
-    <div>
-      <Box sx={{ backgroundColor: '#FEFAFA', marginBottom: 2 }} top={0} left={0} right={0} zIndex={1} position={'fixed'}  >
-        <Grid container sx={{ flexDirection: { xs: 'column', md: 'row' } }} justifyContent={'space-between'} maxWidth={'lg'} margin={'auto'}>
-          <Grid item container={true} alignItems={'center'} justifyContent={'space-between'} paddingX={2} md={2}>
-            <img src={'images/logo.png'} alt="" height={70} width={70} />
-            <Box sx={{ display: { xs: 'block', md: 'none' } }}>
-              <Box onClick={()=>{ handelToggle(true)}} sx={{ display: (navbarState ? 'none' : 'block') }}>
-                <MenuRoundedIcon fontSize='large' color={'primary'}></MenuRoundedIcon>
 
-              </Box>
-              <Box onClick={()=>{ handelToggle(false)}} sx={{ display: (navbarState ? 'block' : 'none') }}>
-                <CloseRoundedIcon fontSize='large' color={'primary'} ></CloseRoundedIcon>
+    <Box component={'div'} sx={{ backgroundColor: '#FEFAFA', marginBottom: 2 }}  >
+      <Grid container sx={{ flexDirection: { xs: 'column', md: 'row' } }} justifyContent={'space-between'} paddingY={3} maxWidth={'lg'} margin={'auto'}>
+        <Grid item container={true} alignItems={'center'} justifyContent={'space-between'} paddingX={2} md={2}>
+          <img src={'images/logo.png'} alt="" height={70} width={70} />
+          <Box component={'div'} sx={{ display: { xs: 'block', md: 'none' } }}>
+            <Box component={'div'} onClick={() => { handelToggle(true) }} sx={{ display: (navbarState ? 'none' : 'block') }}>
+              <MenuRoundedIcon fontSize='large' color={'primary'}></MenuRoundedIcon>
 
-              </Box>
             </Box>
-          </Grid>
+            <Box component={'div'} onClick={() => { handelToggle(false) }} sx={{ display: (navbarState ? 'block' : 'none') }}>
+              <CloseRoundedIcon fontSize='large' color={'primary'} ></CloseRoundedIcon>
 
-          <Grid item sx={{ display: { xs: (navbarState ? 'flex' : 'none'), md: 'flex' }, flexDirection: { xs: 'column', md: 'row' } }} container gap={4} alignItems={'center'} md={4}>
-           
-              <>
-                {
-                  routerLinks.map((item) => {
-                    return (<>
-                      <Link to={item.path} onClick={()=>{
-                        handelLinkClick()
-                       
-                      }}>
-                        <Typography variant='subtitle1' color={theme.palette.secondary.main}>
-                       {item.name}
-                        </Typography>
-                      </Link>
-                    </>)
-                  })
-                }
-
-               
-
-              </>
-
-         
-          </Grid>
-
-          <Grid display={{ xs: 'none', md: 'block' }} item container flexDirection={'row'} alignItems={'center'} justifyContent={'end'} md={2}>
-            <Box >
-              <ButtonComponent > <Typography variant='subtitle1'>Hire Me</Typography> </ButtonComponent>
             </Box>
-          </Grid>
+          </Box>
         </Grid>
-      </Box>
 
-    </div>
+        <Grid item sx={{ display: { xs: (navbarState ? 'flex' : 'none'), md: 'flex' }, flexDirection: { xs: 'column', md: 'row' } }} container gap={4} alignItems={'center'} md={4}>
+
+          <>
+            {
+              routerLinks.map((item) => {
+                return (<>
+                  <Link style={{textDecoration:'none'}} to={item.path} onClick={() => {
+                    handelLinkClick()
+
+                  }}>
+                    <Typography variant='subtitle1' color={theme.palette.secondary.main}>
+                      {item.name}
+                    </Typography>
+                  </Link>
+                </>)
+              })
+            }
+
+
+
+          </>
+
+
+        </Grid>
+
+        <Grid display={{ xs: 'none', md: 'block' }} item container flexDirection={'row'} alignItems={'center'} justifyContent={'end'} md={2}>
+          <Box component={'div'} display={'flex'} justifyContent={'end'}>
+            <ButtonComponent handelClick={() => { }} > <Typography variant='button'>Hire Me</Typography> </ButtonComponent>
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
+
+
   )
 }
 

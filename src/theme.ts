@@ -37,6 +37,12 @@ export const theme = createTheme({
             fontSize: "19px",
             fontWeight: '600'
         },
+        button:{
+            fontFamily: ['Open Sans'].join(','),
+            fontSize: "16px",
+            fontWeight: '400',
+            lineHeight:'16px'
+        },
         subtitle1: {
             fontFamily: ['Open Sans'].join(','),
             fontSize: "17px",

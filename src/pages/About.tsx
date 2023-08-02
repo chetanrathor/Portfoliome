@@ -21,12 +21,12 @@ const About = () => {
     <div>
       <Header></Header>
       <PageHeading heading='About Us'></PageHeading>
-      <Box sx={{ padding: { xs: 2, md: 0 } }}>
+      <Box component={'div'}sx={{ padding: { xs: 2, md: 0 } }}>
         <Container shouldVisibleBackgroundImage>
           <Wrapper>
             <Grid container justifyContent={'center'} marginY={10}>
               <Grid lg={4} sx={{ display: { xs: 'none', md: 'block' } }}>
-                <Box sx={{ backgroundColor: theme.palette.primary.main, borderRadius: '10px', width: '330px', height: '440px' }}>
+                <Box component={'div'}sx={{ backgroundColor: theme.palette.primary.main, borderRadius: '10px', width: '330px', height: '440px' }}>
                   <img height={'420px'} width={'330px'} style={{ position: 'relative', top: '10px', right: '10px' }} src="images/cart.png" alt="" />
                 </Box>
               </Grid>
@@ -62,7 +62,7 @@ const About = () => {
                   I Create Products Not
                   Just Arts
                 </Typography>
-                <Box sx={{ width: { md: '49px' } }} marginY={2}><Seprator width='49px' ></Seprator></Box>
+                <Box component={'div'}sx={{ width: { md: '49px' } }} marginY={2}><Seprator width='49px' ></Seprator></Box>
                 <Typography sx={{ textAlign: textAlign }} variant='subtitle1' marginY={2} color={'#35373A'}>
                   Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit. Ut elit tellus, luctus nec
@@ -86,7 +86,7 @@ const About = () => {
                 <Typography variant='h4' sx={{ textAlign }} color={theme.palette.secondary.main}>
                   Frontend and Backend Developer
                 </Typography>
-                <Box sx={{ width: { md: '82px' } }} marginY={2}>
+                <Box component={'div'}sx={{ width: { md: '82px' } }} marginY={2}>
                   <Seprator width='82px'></Seprator>
                 </Box>
                 <Typography sx={{ textAlign }} variant='subtitle1' color={'#35373A'}>
@@ -95,9 +95,9 @@ const About = () => {
                   dolor sit amet, consectetur adipisci elit. Ut elit tellus, luctus nec
                   ullamcorper mattis, pulvinar dapibus leo.
                 </Typography>
-                <Box sx={{ marginX: { xs: '25%', md: '0' }, marginY: 2 }}>
+                <Box component={'div'}sx={{ marginX: { xs: '25%', md: '0' }, marginY: 2 }}>
 
-                  <ButtonComponent> <Typography variant='subtitle2' color={'#fff'}>Download CV</Typography></ButtonComponent>
+                  <ButtonComponent  handelClick={()=>{}}> <Typography variant='subtitle2' color={'#fff'}>Download CV</Typography></ButtonComponent>
                 </Box>
               </Grid>
               <Grid item container sx={{ marginY: 2 }} direction={'column'} justifyContent={'space-between'} lg={6} paddingY={1} paddingX={4}>
@@ -166,10 +166,10 @@ dapibus leo.'></ClientReview>
             <Grid item container justifyContent={'center'} lg={6}>
               <SectionHeading heading='Stay In Touch' subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
         nec ullamcorper mattis, pulvinar dapibus leo.'></SectionHeading>
-              <Box width={'100%'} marginY={3}>
+              <Box component={'div'}width={'100%'} marginY={3}>
                 <Input></Input>
               </Box>
-              <ButtonComponent>
+              <ButtonComponent  handelClick={()=>{}}>
                 <Typography variant='subtitle2'> Subscribe</Typography>
               </ButtonComponent>
             </Grid>

@@ -7,7 +7,7 @@ interface Prop{
 }
 const PaddingWrapper = ({sx}:Prop) => {
   return (
-    <Box sx={sx}></Box>
+    <Box component={'div'}sx={sx}></Box>
   )
 }
 

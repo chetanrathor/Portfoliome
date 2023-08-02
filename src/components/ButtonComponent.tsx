@@ -3,19 +3,20 @@ import { ReactNode } from 'react';
 
 
 interface Prop {
-    children:ReactNode
+    children: ReactNode,
+    handelClick: () => void
 }
 
-const sx ={}
+const sx = {}
 
 
 
-const ButtonComponent = ({children}: Prop) => {
- 
+const ButtonComponent = ({ children, handelClick }: Prop) => {
+
     return (
-       
-            <Button variant='contained' sx={{paddingX:'30px',paddingY:'15px' }}>{children}</Button>
-       
+
+        <Button onClick={(e) => { e.preventDefault(); handelClick() }} variant='contained' sx={{ paddingX: '30px', paddingY: '15px' }}>{children}</Button>
+
     )
 }
 

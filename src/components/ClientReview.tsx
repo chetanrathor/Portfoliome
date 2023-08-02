@@ -15,7 +15,7 @@ interface Prop {
 const ClientReview = ({ clientImage, name, review, isPublicImage,maxWidth }: Prop) => {
     return (
         <div>
-            <Grid gap={3} container direction={'column'} alignItems={'center'} sx={{ backgroundColor: theme.palette.warning.main, padding: '48px',borderRadius:'10px',boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}>
+            <Grid gap={3} maxWidth={maxWidth} container direction={'column'} alignItems={'center'} sx={{ backgroundColor: theme.palette.warning.main, paddingY: '36px',paddingX:'48px', borderRadius:'10px',boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}>
                 <Grid item>
 
                     <img alt='' src={`${process.env.PUBLIC_URL}/images/quotation.png`} width={'19px'} height={'19px'}></img>
@@ -25,7 +25,7 @@ const ClientReview = ({ clientImage, name, review, isPublicImage,maxWidth }: Pro
                     <img alt=''  src={`${(isPublicImage ? process.env.PUBLIC_URL + '/images/' + clientImage : clientImage)}`} width={'68px'} height={'68px'}></img>
                 </Grid>
                 <Typography variant='h5' color={theme.palette.secondary.main}>{name}</Typography>
-                <Typography maxWidth={maxWidth} textAlign={'center'} variant='subtitle1' color={theme.palette.success.main}>Lorem ipsum dolor sit amet,
+                <Typography  textAlign={'center'} variant='subtitle1' color={theme.palette.success.main}>Lorem ipsum dolor sit amet,
                     {review}</Typography>
                 <Seprator width='27.9'></Seprator>
                 <Grid item>

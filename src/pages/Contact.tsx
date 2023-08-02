@@ -61,15 +61,15 @@ const Contact = () => (
               <SectionHeading  heading='Get In Touch' subtitle=''></SectionHeading>
               <Input></Input>
               <Input></Input>
-              <Box>
+              <Box component={'div'}>
 
                 {/* <TextareaAutosize style={{ background: '#FAFAFA', borderRadius: '2px' }} minRows={12} cols={90} ></TextareaAutosize> */}
                 <Typography sx={{textAlign:textAlign}} variant='body1' color={'#35373A'}>
                   0 of 1 max characters.
                 </Typography>
               </Box>
-              <Box sx={{margin:{xs:'auto',md:'0'}}}>
-                <ButtonComponent>
+              <Box component={'div'}sx={{margin:{xs:'auto',md:'0'}}}>
+                <ButtonComponent  handelClick={()=>{}}>
                   <Typography variant='subtitle1' color={'#fff'}>Send Message</Typography>
                 </ButtonComponent>
               </Box>
@@ -78,7 +78,7 @@ const Contact = () => (
           </Grid>
           <Grid item lg={4} paddingX={{xs:0,md:10}} paddingY={5}>
             <SectionHeading heading='Message Me' subtitle='' ></SectionHeading>
-            <Box marginY={2}>
+            <Box component={'div'}marginY={2}>
 
               <Typography variant='subtitle1' color={'#35373A'} sx={{textAlign}}>
                 Lorem ipsum dolor
