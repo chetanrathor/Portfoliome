@@ -1,13 +1,15 @@
+import { IconType } from "../constants/common.constants"
+
 export const utils = {
-    iconRedirectionPath: {
-        facebook: `https://www.facebook.com`,
-        twitter: `https://www.twitter.com`,
-        instagram: `https://www.instagram.com`,
-        github: `https://www.github.com`,
-        linkedin: `https://www.linkedin.com`
-    },
+    iconRedirectionPath: [
+        { link: `https://www.facebook.com`,identifier:IconType.Facebook },
+        // { link: `https://www.twitter.com`,identifier:IconType. },
+        { link: `https://www.instagram.com`, identifier:IconType.Instagram },
+        { link: `https://www.github.com`,identifier:IconType.GitHub  },
+        { link: `https://www.linkedin.com`,identifier:IconType.LinkedIn  },
+    ],
     copyRightText: ``,
-    email: ``,
+    email: `chetan.rathor.dev@gmail.com`,
     phone: ``
 }
 
@@ -51,7 +53,7 @@ export const servicesProvidingMe = {
                     imagePath: 'code.png',
                     height: '68px',
                     width: '68px'
-                  },
+                },
             }
         },
         {
@@ -82,8 +84,43 @@ export const servicesProvidingMe = {
 }
 
 export const workExperince = {
-    subTitle: ``,
-    experiences: [],
+    subTitle: `Transformed complex challenges into innovative solutions through collaborative teamwork and strategic thinking`,
+    experiences: [
+        [
+            {
+                title: `HTML5`,
+                year: `2022-Present`,
+                subTitle: `Proficient in HTML5: Crafting Dynamic and Responsive Web Content with Cutting-Edge Markup Language for Seamless User Experiences and Modern Design Aesthetics`,
+                progress: 60
+            },
+            {
+                title: `CSS3`,
+                year: `2022-Present`,
+                subTitle: `Elevating Web Design with CSS3 Mastery: Creating Visually Stunning and Engaging User Interfaces through Advanced Styling Techniques and Responsive Layouts. &nbsp;`,
+                progress: 50
+            }
+        ],
+        [
+            {
+                title: `React.Js`,
+                year: `2022-Present`,
+                subTitle: `Empowering Web Development with React: Building Interactive and Scalable User Interfaces Using the Modern JavaScript Library for Efficient Front-End Creation and Seamless State Management.`,
+                progress: 40
+            },
+            {
+                title: `Nest.Js`,
+                year: `2022-Present`,
+                subTitle: `Unlocking Backend Potential with NestJS: Harnessing the Power of a Progressive Node.js Framework for Building Scalable, Modular, and Maintainable Server-side Applications.&nbsp&nbsp&nbsp jshjs`,
+                progress: 30
+            },
+            {
+                title: `TypeORM & PgSQL`,
+                year: `2022-Present`,
+                subTitle: `Seamless Data Integration with TypeORM and PostgreSQL: Leveraging Advanced Object-Relational Mapping and Robust Database Management for Efficient and Reliable Backend Development.`,
+                progress: 20
+            },
+        ]
+    ],
 }
 
 export const myPortfolio = {
@@ -92,8 +129,27 @@ export const myPortfolio = {
 }
 
 export const clientSays = {
-    subTitle: ``,
-    clientReviews: []
+    subTitle: `Client's Vision Transformed: Listening, Adapting, Delivering Exceptional Solutions with Precision.`,
+    clientReviews: [
+        {
+            avatar: `male.png`,
+            name: `Mark Wood`,
+            review: `Remarkable service! Attentively grasped our requirements and delivered beyond expectations. True collaborators, they're essential for any project.&nbsp;`,
+
+        },
+        {
+            avatar: `male.png`,
+            name: `Henry Feyol`,
+            review: `Expertise shines. Transformed our concepts into polished reality swiftly. Great communication, exceptional outcomes! Highly recommended for top-tier results.`,
+
+        },
+        {
+            avatar: `male.png`,
+            name: `Ileana charis`,
+            review: `Dependable innovators. Executed our project with brilliance and insights. Trustworthy partners delivering seamless solutions. A go-to choice for reliability and ingenuity.`,
+
+        }
+    ]
 }
 
 export const stayInTouch = {

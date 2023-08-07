@@ -12,6 +12,7 @@ import Loader from './Loader/Loader';
 import { Model } from './Model';
 import { hero, utils } from '../static';
 import { Link, useNavigate } from 'react-router-dom';
+import { IconType } from '../constants/common.constants';
 const Hero = () => {
 
     const words = [
@@ -75,65 +76,89 @@ const Hero = () => {
         navigate('/about')
     }
 
+    const getIcon = (identifier: IconType) => {
+
+        const sx = { color: theme.palette.secondary.main, cursor: 'pointer' }
+        switch (identifier) {
+            case IconType.Facebook:
+                return (<LinkedInIcon sx={sx} />)
+            case IconType.GitHub:
+                return (<GitHubIcon sx={sx} />)
+            case IconType.LinkedIn:
+                return (<LinkedInIcon sx={sx} />)
+            case IconType.Instagram:
+                return (<InstagramIcon sx={sx} />)
+            default:
+                return (<InstagramIcon sx={sx} />)
+
+        }
+    }
+
 
 
 
 
     return (
 
-            <Box component={'div'}>
-                <Grid container justifyContent={'center'} maxWidth={'lg'} margin={'auto'} sx={{ flexDirection: { xs: 'column-reverse', md: 'row' } }}     >
-                    <Grid maxWidth={'57px'} justifyContent={'flex-start'} container gap={3} sx={{ flexDirection: { xs: 'row', md: 'column' }, justifyContent: { xs: 'start', md: 'start' }, marginY: { xs: 2, md: 0 } }} >
-                        <Link to={utils.iconRedirectionPath.linkedin} target='_blank'> <LinkedInIcon sx={{ color: theme.palette.secondary.main, cursor: 'pointer' }} /></Link>
-                        <Link to={utils.iconRedirectionPath.instagram} target='_blank'><InstagramIcon sx={{ color: theme.palette.secondary.main, cursor: 'pointer' }}></InstagramIcon></Link>
-                        <Link to={utils.iconRedirectionPath.facebook} target='_blank'><FacebookIcon sx={{ color: theme.palette.secondary.main, cursor: 'pointer' }}></FacebookIcon></Link>
-                        <Link to={utils.iconRedirectionPath.github} target='_blank'><GitHubIcon sx={{ color: theme.palette.secondary.main, cursor: 'pointer' }}></GitHubIcon></Link>
-                    </Grid>
-                    <Grid maxWidth={'608px'} item container sx={{ flexDirection: { xs: 'column-reverse', md: 'column' }, justifyContent: { xs: 'start', md: 'start' } }}  >
+        <Box component={'div'}>
+            <Grid container justifyContent={'center'} maxWidth={'lg'} margin={'auto'} sx={{ flexDirection: { xs: 'column-reverse', md: 'row' } }}     >
+                <Grid maxWidth={'57px'} justifyContent={'flex-start'} container gap={3} sx={{ flexDirection: { xs: 'row', md: 'column' }, justifyContent: { xs: 'start', md: 'start' }, marginY: { xs: 2, md: 0 } }} >
 
-                        <Grid justifyContent={'center'} container direction={'column'} gap={5}>
-                            <Grid container direction={'column'} gap={2} >
-                                <Typography variant='h1' color={theme.palette.secondary.main} >
-                                    {hero.headingFirst}
-                                    <br />
-                                    {part}
-                                </Typography>
-                                <Typography variant='subtitle1' color={theme.palette.success.main}>
-                                    {hero.subTitle}
-                                </Typography>
-                            </Grid>
-                            <Box component={'div'}>
+                    {
+                        utils.iconRedirectionPath.map((item) => {
+                            return (
+                                <Link to={item.link} target='_blank'> {getIcon(item.identifier)}</Link>
 
-                                <ButtonComponent handelClick={handelButtonClick}><Typography variant='button' >{hero.buttonText}</Typography></ButtonComponent>
-                            </Box>
-                        </Grid>
+                            )
+                        })
+                    }
 
-                    </Grid>
-                    <Grid maxWidth={'471px'} item container display={{ xs: 'none', md: 'flex' }} >
-
-                        {/* <img src={process.env.PUBLIC_URL + '/images/hero.png'} style={{ maxWidth: '471px' }} width={'100%'} alt="" /> */}
-                        <Canvas
-
-                            camera={{ position: [8, 0, 12.25], fov: 7.5 }}
-                            style={{
-                                backgroundColor: 'inherit',
-                                width: '100vw',
-                                height: '70vh',
-
-                            }}
-                        >
-                            <ambientLight intensity={2} />
-                            <ambientLight intensity={1.5} />
-                            <directionalLight intensity={0.4} />
-                            <Suspense fallback={null}>
-                                <Model position={[0.025, -0.9, 0.1]} ></Model>
-                            </Suspense>
-                            <OrbitControls />
-                        </Canvas>
-
-                    </Grid>
                 </Grid>
-            </Box>
+                <Grid maxWidth={'608px'} item container sx={{ flexDirection: { xs: 'column-reverse', md: 'column' }, justifyContent: { xs: 'start', md: 'start' } }}  >
+
+                    <Grid justifyContent={'center'} container direction={'column'} gap={5}>
+                        <Grid container direction={'column'} gap={2} >
+                            <Typography variant='h1' color={theme.palette.secondary.main} >
+                                {hero.headingFirst}
+                                <br />
+                                {part}
+                            </Typography>
+                            <Typography variant='subtitle1' color={theme.palette.success.main}>
+                                {hero.subTitle}
+                            </Typography>
+                        </Grid>
+                        <Box component={'div'}>
+
+                            <ButtonComponent handelClick={handelButtonClick}><Typography variant='button' >{hero.buttonText}</Typography></ButtonComponent>
+                        </Box>
+                    </Grid>
+
+                </Grid>
+                <Grid maxWidth={'471px'} item container display={{ xs: 'none', md: 'flex' }} >
+
+                    {/* <img src={process.env.PUBLIC_URL + '/images/hero.png'} style={{ maxWidth: '471px' }} width={'100%'} alt="" /> */}
+                    <Canvas
+
+                        camera={{ position: [8, 0, 12.25], fov: 7.5 }}
+                        style={{
+                            backgroundColor: 'inherit',
+                            width: '100vw',
+                            height: '70vh',
+
+                        }}
+                    >
+                        <ambientLight intensity={2} />
+                        <ambientLight intensity={1.5} />
+                        <directionalLight intensity={0.4} />
+                        <Suspense fallback={null}>
+                            <Model position={[0.025, -0.9, 0.1]} ></Model>
+                        </Suspense>
+                        <OrbitControls />
+                    </Canvas>
+
+                </Grid>
+            </Grid>
+        </Box>
 
 
     )
