@@ -7,7 +7,6 @@ interface Prop {
     handelClick: () => void
 }
 
-const sx = {}
 
 
 

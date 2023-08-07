@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Grid, Grow, Typography } from '@mui/material';
+import { Box, Grid, Grow, Slide, Typography } from '@mui/material';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Rootstate } from '../store/store';
-import { theme } from '../theme';
+import ButtonComponent from '../components/ButtonComponent';
+import ClientReview from '../components/ClientReview';
+import Container from '../components/Container';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import SectionHeading from '../components/SectionHeading';
 import Seprator from '../components/Seprator';
-import ButtonComponent from '../components/ButtonComponent';
-import Container from '../components/Container';
-import Wrapper from '../components/Wrapper';
 import SkillCart from '../components/SkillCart';
-import ClientReview from '../components/ClientReview';
-import Footer from '../components/Footer';
-import { Fade, Slide } from '@mui/material';
-import Loader from '../components/Loader/Loader';
+import Wrapper from '../components/Wrapper';
 import { aboutMe, clientSays, servicesProvidingMe, workExperince } from '../static';
+import { Rootstate } from '../store/store';
+import { theme } from '../theme';
 
 const Home = () => {
   // Redux state
@@ -25,18 +23,11 @@ const Home = () => {
   const serviceProviders = servicesProvidingMe.services
   const [loading, setLoading] = useState(true)
 
-  const simulateAsyncLoad = async () => {
-    // Simulate an asynchronous operation (replace this with your actual fetching/rendering logic)
-    await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulating 2 seconds delay
-    setLoading(false);
-  };
-
   const handelScroll = (e: any) => {
     // console.log('window.scrollY', window.scrollY)
     console.log('e', e)
     const scrollDirection = e.deltaY > 0 ? 'down' : 'up';
-    const one = window.scrollY - 100
-    const two = window.scrollY
+    
 
     console.log('one', scrollDirection)
     // console.log('two', two)

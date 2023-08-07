@@ -1,13 +1,12 @@
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
-import { Box, Grid, Slide, Typography } from '@mui/material'
-import { useState } from 'react'
+import { Box, Grid, Typography } from '@mui/material'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { toggleVisiblity } from '../store/navbarSlice'
+import { Rootstate } from '../store/store'
 import { theme } from '../theme'
 import ButtonComponent from './ButtonComponent'
-import { useDispatch, useSelector } from 'react-redux'
-import { Rootstate } from '../store/store'
-import { toggleVisiblity } from '../store/navbarSlice'
 const Header = () => {
   const navbarState = useSelector((state: Rootstate) => state.navbar.isVisible)
   const dispatch = useDispatch()

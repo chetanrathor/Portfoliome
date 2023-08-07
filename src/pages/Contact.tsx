@@ -42,7 +42,7 @@ const Contact = () => (
             return (
               <Grid item width={'329.98px'} key={1}>
                 <Grid container direction={'column'} paddingY={4} paddingX={2} alignItems={'center'} sx={{borderRadius:'10px'}} boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'}>
-                  <img height={'35px'} width={'22px'} src={`${process.env.PUBLIC_URL}/images/${item.icon}`}></img>
+                  <img height={'35px'} width={'22px'} alt='img' src={`${process.env.PUBLIC_URL}/images/${item.icon}`}></img>
                   <Typography variant='h6' color={'#002D5B'}>
                     {item.heading}
                   </Typography>

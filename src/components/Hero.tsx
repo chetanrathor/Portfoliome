@@ -1,18 +1,16 @@
-import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { Box, Grid, Grow, Slide, Typography } from '@mui/material';
-import { theme } from '../theme';
-import ButtonComponent from './ButtonComponent';
-import { Canvas } from '@react-three/fiber';
+import { Box, Grid, Typography } from '@mui/material';
 import { OrbitControls } from '@react-three/drei';
-import { lazy, Suspense, useEffect, useState } from 'react';
-import Loader from './Loader/Loader';
-import { Model } from './Model';
-import { hero, utils } from '../static';
+import { Canvas } from '@react-three/fiber';
+import { Suspense, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { IconType } from '../constants/common.constants';
+import { hero, utils } from '../static';
+import { theme } from '../theme';
+import ButtonComponent from './ButtonComponent';
+import { Model } from './Model';
 const Hero = () => {
 
     const words = [
@@ -58,7 +56,7 @@ const Hero = () => {
                 } else {
 
                     setOffset((prev) => {
-                        if (prev != 1) {
+                        if (prev !== 1) {
                             return prev - 1
                         }
                         return prev
