@@ -1,6 +1,7 @@
 import { Box, Grid, Grow, Slide, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import BackToTop from '../components/BackToTop';
 import ButtonComponent from '../components/ButtonComponent';
 import ClientReview from '../components/ClientReview';
 import Container from '../components/Container';
@@ -14,6 +15,7 @@ import Wrapper from '../components/Wrapper';
 import { aboutMe, clientSays, servicesProvidingMe, workExperince } from '../static';
 import { Rootstate } from '../store/store';
 import { theme } from '../theme';
+import { keyGenerator } from '../utils';
 
 const Home = () => {
   // Redux state
@@ -21,13 +23,12 @@ const Home = () => {
 
   // Service providers data
   const serviceProviders = servicesProvidingMe.services
-  const [loading, setLoading] = useState(true)
 
   const handelScroll = (e: any) => {
     // console.log('window.scrollY', window.scrollY)
     console.log('e', e)
     const scrollDirection = e.deltaY > 0 ? 'down' : 'up';
-    
+
 
     console.log('one', scrollDirection)
     // console.log('two', two)
@@ -37,13 +38,6 @@ const Home = () => {
   }
 
   useEffect(() => {
-    // Simulate an asynchronous operation (replace this with your actual fetching/rendering logic)
-    // setTimeout(() => {
-    //   setLoading(false);
-    // }, 2000); // Simulating 2 seconds delay
-    // await new Promise((resolve) => setTimeout(resolve, 2000))
-    // simulateAsyncLoad()
-    // setLoading(false);
 
     window.addEventListener('scroll', handelScroll)
   }, []);
@@ -55,8 +49,8 @@ const Home = () => {
     return (
 
       <div>
-        <Box onWheel={(e) => { handelScroll(e) }} component={'div'} sx={{ padding: { xs: 2, md: 0 }, marginTop: { xs: (navbarState ? 28 : 0) } }}>
-          <Box component={'div'} sx={{ backgroundColor: '#FEFAFA' }}>
+        <Box onWheel={(e) => { handelScroll(e) }} component={'div'} sx={{ padding: { xs: 2, md: 0 }, marginTop: { xs: (navbarState ? 0 : 0) } }}>
+          <Box component={'div'} sx={{ backgroundColor: theme.palette.background.default, paddingBottom: '70px' }}>
             <Header />
             <Box component={'div'} paddingTop={1}>
               <Hero />
@@ -66,7 +60,7 @@ const Home = () => {
           {/* About Me section */}
           {/* <Fade in timeout={1500}> */}
           <Grow in timeout={1500}>
-            <Box component={'div'} paddingY={3}>
+            <Box component={'div'} paddingY={3} sx={{ backgroundColor: theme.palette.background.paper }}>
               <Grid direction={'column'} gap={8} container maxWidth={'lg'} margin={'auto'} marginTop={12}>
                 <SectionHeading heading='About Me' subtitle={aboutMe.subTitle} />
 
@@ -92,7 +86,7 @@ const Home = () => {
                     </Typography>
                     <Box component={'div'} sx={{ margin: { xs: 'auto', md: '0' } }}>
                       <ButtonComponent handelClick={() => { }}>
-                        <Typography variant='subtitle1'>{aboutMe.buttonText}</Typography>
+                        <Typography variant='button'>{aboutMe.buttonText}</Typography>
                       </ButtonComponent>
                     </Box>
                   </Grid>
@@ -118,7 +112,7 @@ const Home = () => {
           {/* </Fade> */}
 
           {/* Service Providers section */}
-          <Container shouldVisibleBackgroundImage={false} paddingY={15}>
+          <Container shouldVisibleBackgroundImage={false} backgroundColor={theme.palette.background.paper} paddingY={15}>
             <Wrapper>
               {/* <Fade in timeout={1500}> */}
               <>
@@ -126,7 +120,7 @@ const Home = () => {
                 <Grid container gap={6} justifyContent={'space-between'} padding={2} paddingY={5}>
                   {/* Service providers */}
                   {serviceProviders.map((item, index) => (
-                    <Grid key={index} gap={3} container direction={'column'} alignItems={'center'} maxWidth={'329px'} sx={{ backgroundColor: theme.palette.warning.main, padding: '48px', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', borderRadius: 2 }}>
+                    <Grid key={keyGenerator()} gap={3} container direction={'column'} alignItems={'center'} maxWidth={'329px'} sx={{ backgroundColor: theme.palette.warning.main, padding: '48px', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', borderRadius: 2 }}>
                       <Grid item>
                         <img alt='' src={`${process.env.PUBLIC_URL}/images/${item.icon.path}`} width={item.icon.meta.width} height={item.icon.meta.height} />
                       </Grid>
@@ -147,7 +141,7 @@ const Home = () => {
           </Container>
 
           {/* Work Experience section */}
-          <Container shouldVisibleBackgroundImage>
+          <Container shouldVisibleBackgroundImage backgroundColor={theme.palette.background.paper}>
             <Wrapper>
               <Slide direction='up' in timeout={1500}>
                 <Grid direction={'column'} paddingY={5} container gap={2}>
@@ -159,23 +153,19 @@ const Home = () => {
                     {
                       workExperince.experiences[0].map((item) => {
                         return (
-                          <Grid item maxWidth={'520px'}>
+                          <Grid item maxWidth={'520px'} key={keyGenerator()}>
                             <SkillCart title={item.title} description={item.subTitle} duration={item.year} linePercent={item.progress} />
                           </Grid>
                         )
                       })
                     }
 
-
-                    {/* <Grid item maxWidth={'520px'}>
-                        <SkillCart title='UI/UX Designer' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' duration='2015-2018' linePercent={80} />
-                      </Grid> */}
                   </Grid>
-                  <Grid container direction={'row'} justifyContent={'space-between'}>
+                  <Grid container direction={'row'} gap={3} justifyContent={{ xs: 'center', md: 'space-between' }}>
 
                     {workExperince.experiences[1].map((item) => {
                       return (
-                        <Grid item maxWidth={'329px'}>
+                        <Grid item maxWidth={'329px'} key={keyGenerator()}>
                           <SkillCart title={item.title} description={item.subTitle} duration={item.year} linePercent={item.progress} />
                         </Grid>
                       )
@@ -183,12 +173,7 @@ const Home = () => {
 
 
 
-                    {/* <Grid item maxWidth={'329px'}>
-                      <SkillCart title='UI/UX Designer' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' duration='2015-2018' linePercent={80} />
-                    </Grid>
-                    <Grid item maxWidth={'329px'}>
-                      <SkillCart title='UI/UX Designer' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' duration='2015-2018' linePercent={80} />
-                    </Grid> */}
+
                   </Grid>
                 </Grid>
               </Slide>
@@ -196,7 +181,7 @@ const Home = () => {
           </Container>
 
           {/* What My Clients Say section */}
-          <Container shouldVisibleBackgroundImage>
+          <Container shouldVisibleBackgroundImage backgroundColor={theme.palette.background.paper}>
             <Wrapper>
               <Grid container direction={'column'} marginY={2} paddingY={8}>
                 <SectionHeading heading='What My Clients Say' subtitle={clientSays.subTitle} />
@@ -205,27 +190,28 @@ const Home = () => {
                   {
                     clientSays.clientReviews.map((item) => {
                       return (
-                        <Grid item>
+                        <Grid item key={keyGenerator()}>
                           <ClientReview maxWidth='330px' clientImage={item.avatar} isPublicImage name={item.name} review={item.review} />
                         </Grid>
                       )
                     })
                   }
-                  {/* <Grid item>
-                    <ClientReview maxWidth='330px' clientImage='male.png' isPublicImage name='Jane Done' review='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' />
-                  </Grid>
-                  <Grid item>
-                    <ClientReview maxWidth='330px' clientImage='male.png' isPublicImage name='Jane Done' review='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' />
-                  </Grid> */}
-                  {/* Add more client reviews */}
+
                 </Grid>
               </Grid>
             </Wrapper>
           </Container>
 
           {/* Footer */}
-          <Footer />
         </Box>
+
+        <Box component={'div'} display={'flex'} justifyContent={'end'} position={'relative'} bottom={20}>
+
+          <BackToTop></BackToTop>
+        </Box>
+
+
+        <Footer />
       </div>
 
 

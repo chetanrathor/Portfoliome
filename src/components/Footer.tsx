@@ -10,6 +10,7 @@ import { theme } from '../theme';
 import { utils } from '../static';
 import { Link } from 'react-router-dom';
 import { IconType } from '../constants/common.constants';
+import { keyGenerator } from '../utils';
 const Footer = () => {
     const getIcon = (identifier: IconType) => {
 
@@ -39,16 +40,11 @@ const Footer = () => {
                             {
                                 utils.iconRedirectionPath.map((item) => {
                                     return (
-                                        <Link to={item.link} target='_blank'> {getIcon(item.identifier)}</Link>
+                                        <Link key={keyGenerator()} to={item.link} target='_blank'> {getIcon(item.identifier)}</Link>
 
                                     )
                                 })
                             }
-
-                            {/* <LinkedInIcon sx={{ color: '#fff' }}></LinkedInIcon>
-                            <InstagramIcon sx={{ color: '#fff' }}></InstagramIcon>
-                            <GitHubIcon sx={{ color: '#fff' }}></GitHubIcon>
-                            <FacebookIcon sx={{ color: '#fff' }}></FacebookIcon> */}
 
 
                         </Grid>
@@ -56,7 +52,7 @@ const Footer = () => {
                             <img src={'images/logo2.png'} alt="" height={70} width={70} />
                         </Grid>
                         <Grid item container lg={4} justifyContent={'center'} alignItems={'center'}>
-                            <Link to={`mailto://${utils.email}`}>
+                            <Link to={`mailto://${utils.email}`} style={{textDecoration:'none'}}>
 
                                 <Typography variant='h5' color={'#fff'}>
                                     {utils.email}

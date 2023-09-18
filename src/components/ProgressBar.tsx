@@ -8,7 +8,7 @@ interface Prop{
 const ProgressBar = ({percent}:Prop) => {
   return (
     <div>
-      <Line percent={percent}   style={{height:'22px',width:'100%'}} strokeColor={theme.palette.primary.main} />
+      <Line percent={percent}    style={{height:'22px',width:'100%'}} strokeColor={theme.palette.primary.main} ></Line>
     </div>
   )
 }

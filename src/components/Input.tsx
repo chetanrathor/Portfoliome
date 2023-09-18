@@ -1,10 +1,10 @@
 import { TextField } from '@mui/material'
 import React from 'react'
 
-const Input = () => {
+const Input = ({ label }: { label?: string }) => {
   return (
-    
-     <TextField sx={{backgroundColor:'#FAFAFA'}}  fullWidth id="outlined-basic" label="Enter email address" variant="outlined" />
+
+    <TextField sx={{ backgroundColor: '#FAFAFA' }} fullWidth id="outlined-basic" label={label} variant="outlined" />
     // </div>
   )
 }

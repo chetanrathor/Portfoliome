@@ -24,13 +24,13 @@ export const aboutMe = {
     subTitle: `Passionate web developer dedicated to excellence.`,
     heading: `Developing With a Passion While Exploring The World.`,
     leftSection: {
-        one: `I am a professional web developer with a strong background in both front-end and back-end development. With my expertise in HTML, CSS, JavaScript, React, and Bootstrap, I can create visually stunning and user-friendly websites. However, my skills extend beyond the front-end, as I also have experience with back-end technologies like Nest.js, PostgreSQL, and TypeScript.`,
+        one: `Experienced web developer proficient in front-end (HTML, CSS, React) and back-end (Nest.js, PostgreSQL) technologies, crafting visually appealing and user-friendly websites with strong expertise in JavaScript and TypeScript.`,
         two: `I am passionate about programming, constantly learning and exploring new technologies to deliver cutting-edge solutions and push boundaries in code.`
     },
     rightSection: {
-        one: `I believe in delivering nothing short of excellence in my work. I am known for my attention to detail and my commitment to producing high-quality websites. I take the time to understand my clients' requirements, ensuring that I meet their specific needs and exceed their expectations. By employing best practices and employing industry standards, I ensure that the websites I develop are not only visually appealing but also highly functional and performant.`,
+        one: `Committed to excellence, I create high-quality, detail-oriented websites that exceed client expectations through tailored solutions, industry standards, and performance optimization.`,
         two: `
-        I excel at solving complex problems with a creative mindset, delivering unique and outstanding websites that exceed expectations through collaboration, expertise, and passion for programming.   `
+        With a creative problem-solving approach, I craft exceptional websites surpassing expectations. Fueled by collaboration, expertise, and programming passion, I deliver unique, outstanding solutions to intricate challenges.   `
     },
     sectionHero: {
         path: `meta_comp.png`,
@@ -158,6 +158,48 @@ export const stayInTouch = {
     buttonText: ``
 }
 
+
+export const aboutUsPage = {
+    heading:'About Us',
+    sectionA:{
+        image:'',
+        firstHalf:{
+            heading:'Passionate Full Stack Developer Crafting Digital Experiences With Code',
+            subHeading:'"Building Innovative Web and Mobile Solutions with Expertise in Frontend and Backend Development. Dedicated to Optimizing User Experiences and Solving Complex Problems through Technology and Creativity."',
+            para1:`"Full Stack Alchemist: Transforming Ideas into Digital Realities Through Code, Design, and Imagination. Let's Craft Your Digital Success Story!"`,
+            emailLabel:`Let's Stay in Touch: Email Me!`,
+            email:'dev.chetan.rathor@gmail.com'
+        },secondfHalf:{
+            title:`"Full Stack Developer: Code Wizardry Ahead"`,
+            heading:`Bringing Creative Solutions to Life Through Web Development, Design, and Problem-Solving in the Digital Landscape. Let's innovate together!`,
+            para1:`Building Seamless Online Experiences with a Blend of Code Mastery, Design Aesthetics, and User-Centric Thinking. Let's Create Excellence!`,
+            para2:`Elevating User Journeys Through Code, Design, and a Passion for Crafting Exceptional Digital Solutions. Your Success, My Priority!`
+        }
+    },
+    sectionB:{
+        heading:'',
+        subTitle:`Front-end and back-end development converge seamlessly in my skill set. I harness the power of React for creating dynamic, responsive user interfaces that captivate users. Meanwhile, with Nest.js and TypeORM, I architect robust back-end systems, managing data and logic efficiently, ensuring optimal performance and scalability.`
+    },
+    sectionC:{
+        heading:'',
+        subHeading:`Let's Keep the Conversation Going - Connect, Collaborate, and Create Together for Future Success.`
+    }
+}
+
+export const contactPage = {
+    phone:{
+        number:'+91 882 188 9586',
+        availableTime:'Monday - Friday from 7am - 5pm'
+    },
+    address:{
+        city:'Indore,India',
+        street:'Madhya Pradeh'
+    },
+    email:{ 
+        address:'dev.chetan.rathor@gmail.com',
+        oneLiner:'Contact me every time!'
+    }
+}
 
 
 

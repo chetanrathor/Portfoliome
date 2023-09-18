@@ -35,19 +35,15 @@ const Hero = () => {
                         setSkipCount(0);
                     }
                 }
-                console.log('forward', forwards)
             } else {
-                console.log('offset', offset)
                 if (offset === 1) {
                     setForwards(true);
                     setI((prev) => (prev + 1 >= words.length ? 0 : prev + 1));
-                    console.log('i', i)
                 }
             }
 
             const currentWord = words[i];
             const currentPart = currentWord.substr(0, offset);
-            console.log('currentPart', currentPart)
             setPart(currentPart);
 
             if (skipCount === 0) {
@@ -100,7 +96,7 @@ const Hero = () => {
 
         <Box component={'div'}>
             <Grid container justifyContent={'center'} maxWidth={'lg'} margin={'auto'} sx={{ flexDirection: { xs: 'column-reverse', md: 'row' } }}     >
-                <Grid maxWidth={'57px'} justifyContent={'flex-start'} container gap={3} sx={{ flexDirection: { xs: 'row', md: 'column' }, justifyContent: { xs: 'start', md: 'start' }, marginY: { xs: 2, md: 0 } }} >
+                <Grid maxWidth={{xs:'100%',md:'57px'}} justifyContent={'flex-start'} container gap={3} sx={{ flexDirection: { xs: 'row', md: 'column' }, justifyContent: { xs: 'start', md: 'start' }, marginY: { xs: 2, md: 0 } }} >
 
                     {
                         utils.iconRedirectionPath.map((item) => {

@@ -5,10 +5,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { toggleVisiblity } from '../store/navbarSlice'
 import { Rootstate } from '../store/store'
+import { setDark, setLight, ThemeMode } from '../store/themeSlice'
 import { theme } from '../theme'
 import ButtonComponent from './ButtonComponent'
 const Header = () => {
   const navbarState = useSelector((state: Rootstate) => state.navbar.isVisible)
+  const themeState = useSelector((state: Rootstate) => state.themeType.mode)
   const dispatch = useDispatch()
   const handelToggle = (value: boolean) => {
     dispatch(toggleVisiblity({ isVisible: value }))
@@ -40,7 +42,7 @@ const Header = () => {
 
   return (
 
-    <Box component={'div'} sx={{ backgroundColor: '#FEFAFA', marginBottom: 2 }}  >
+    <Box component={'div'} sx={{ marginBottom: 2 }}  >
       <Grid container sx={{ flexDirection: { xs: 'column', md: 'row' } }} justifyContent={'space-between'} paddingY={3} maxWidth={'lg'} margin={'auto'}>
         <Grid item container={true} alignItems={'center'} justifyContent={'space-between'} paddingX={2} md={2}>
           <img src={'images/logo.png'} alt="" height={70} width={70} />
@@ -62,7 +64,7 @@ const Header = () => {
             {
               routerLinks.map((item) => {
                 return (<>
-                  <Link style={{textDecoration:'none'}} to={item.path} onClick={() => {
+                  <Link style={{ textDecoration: 'none' }} to={item.path} onClick={() => {
                     handelLinkClick()
 
                   }}>
@@ -83,7 +85,7 @@ const Header = () => {
 
         <Grid display={{ xs: 'none', md: 'block' }} item container flexDirection={'row'} alignItems={'center'} justifyContent={'end'} md={2}>
           <Box component={'div'} display={'flex'} justifyContent={'end'}>
-            <ButtonComponent handelClick={() => { }} > <Typography variant='button'>Hire Me</Typography> </ButtonComponent>
+            <ButtonComponent handelClick={() => { if (themeState === ThemeMode.LIGHT) { dispatch(setDark()) } else {dispatch(setLight())}}} > <Typography variant='button'>Hire Me</Typography> </ButtonComponent>
           </Box>
         </Grid>
       </Grid>
