@@ -7,7 +7,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import Wrapper from './Wrapper';
 import { theme } from '../theme';
-import { utils } from '../static';
+import { contactPage, utils } from '../static';
 import { Link } from 'react-router-dom';
 import { IconType } from '../constants/common.constants';
 import { keyGenerator } from '../utils';
@@ -55,12 +55,12 @@ const Footer = () => {
                             <Link to={`mailto://${utils.email}`} style={{textDecoration:'none'}}>
 
                                 <Typography variant='h5' color={'#fff'}>
-                                    {utils.email}
+                                    {contactPage.email.address}
                                 </Typography>
                             </Link>
                         </Grid>
                     </Grid>
-                    <Typography marginY={4} variant='subtitle2' color={'#FFF'} textAlign={'center'}>Copyright © 2023 Personal Portfolio</Typography>
+                    <Typography marginY={4} variant='subtitle2' color={'#FFF'} textAlign={'center'}>Copyright © 2024 Chetan Rathor</Typography>
                 </Wrapper>
             </Container>
 

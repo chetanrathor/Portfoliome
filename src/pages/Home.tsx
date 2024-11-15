@@ -128,9 +128,9 @@ const Home = () => {
                       <Typography maxWidth={'236px'} textAlign={'center'} variant='subtitle1' color={theme.palette.success.main}>
                         {item.description}
                       </Typography>
-                      <Grid item sx={{ cursor: 'pointer' }}>
+                      {/* <Grid item sx={{ cursor: 'pointer' }}>
                         <img alt='' src={process.env.PUBLIC_URL + 'images/arrow1.png'} width={'46px'} height={'46px'} />
-                      </Grid>
+                      </Grid> */}
                     </Grid>
                   ))}
                 </Grid>
@@ -184,7 +184,7 @@ const Home = () => {
           <Container shouldVisibleBackgroundImage backgroundColor={theme.palette.background.paper}>
             <Wrapper>
               <Grid container direction={'column'} marginY={2} paddingY={8}>
-                <SectionHeading heading='What My Clients Say' subtitle={clientSays.subTitle} />
+                <SectionHeading heading={clientSays.heading} subtitle={clientSays.subTitle} />
                 <Grid container gap={5} justifyContent={'space-between'} padding={2}>
                   {/* Client reviews */}
                   {

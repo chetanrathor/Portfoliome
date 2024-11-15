@@ -1,6 +1,7 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookIcon from '@mui/icons-material/Facebook';
 import { Box, Grid, Typography } from '@mui/material';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
@@ -75,7 +76,7 @@ const Hero = () => {
         const sx = { color: theme.palette.secondary.main, cursor: 'pointer' }
         switch (identifier) {
             case IconType.Facebook:
-                return (<LinkedInIcon sx={sx} />)
+                return (<FacebookIcon sx={sx} />)
             case IconType.GitHub:
                 return (<GitHubIcon sx={sx} />)
             case IconType.LinkedIn:
@@ -96,7 +97,7 @@ const Hero = () => {
 
         <Box component={'div'}>
             <Grid container justifyContent={'center'} maxWidth={'lg'} margin={'auto'} sx={{ flexDirection: { xs: 'column-reverse', md: 'row' } }}     >
-                <Grid maxWidth={{xs:'100%',md:'57px'}} justifyContent={'flex-start'} container gap={3} sx={{ flexDirection: { xs: 'row', md: 'column' }, justifyContent: { xs: 'start', md: 'start' }, marginY: { xs: 2, md: 0 } }} >
+                <Grid maxWidth={{ xs: '100%', md: '57px' }} justifyContent={'flex-start'} container gap={3} sx={{ flexDirection: { xs: 'row', md: 'column' }, justifyContent: { xs: 'start', md: 'start' }, marginY: { xs: 2, md: 0 } }} >
 
                     {
                         utils.iconRedirectionPath.map((item) => {
@@ -131,7 +132,7 @@ const Hero = () => {
                 <Grid maxWidth={'471px'} item container display={{ xs: 'none', md: 'flex' }} >
 
                     {/* <img src={process.env.PUBLIC_URL + '/images/hero.png'} style={{ maxWidth: '471px' }} width={'100%'} alt="" /> */}
-                    <Canvas
+                    {/* <Canvas
 
                         camera={{ position: [8, 0, 12.25], fov: 7.5 }}
                         style={{
@@ -148,8 +149,9 @@ const Hero = () => {
                             <Model position={[0.025, -0.9, 0.1]} ></Model>
                         </Suspense>
                         <OrbitControls />
-                    </Canvas>
+                    </Canvas> */}
 
+                    <img src={`${process.env.PUBLIC_URL}/images/MY2.png`} style={{ maxWidth: '471px' }} width={'100%'}></img>
                 </Grid>
             </Grid>
         </Box>

@@ -22,7 +22,7 @@ const ClientReview = ({ clientImage, name, review, isPublicImage,maxWidth }: Pro
                 </Grid>
                 <Grid item>
 
-                    <img alt=''  src={`${(isPublicImage ? process.env.PUBLIC_URL + '/images/' + clientImage : clientImage)}`} width={'68px'} height={'68px'}></img>
+                    <img alt='' style={{borderRadius:'50%',border:`3px solid ${theme.palette.primary.main}`}}  src={`${(isPublicImage ? process.env.PUBLIC_URL + '/images/' + clientImage : clientImage)}`} width={'68px'} height={'68px'}></img>
                 </Grid>
                 <Typography variant='h5' color={theme.palette.secondary.main}>{name}</Typography>
                 <Typography  textAlign={'center'} variant='subtitle1' color={theme.palette.success.main}>
